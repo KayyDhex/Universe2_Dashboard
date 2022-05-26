@@ -58,14 +58,16 @@ function App() {
                 <th>salesTaken</th>
                 <th>soldUnits</th>
                 <th>bankDebt</th>
-                <th>lastKTNO</th>
+                <th>KTNO</th>
+                <th>Sales</th>
+                <th>Stars</th>
                 </tr>
             </thead>
             <tbody>
-            {gameInfo.map((game,i) => (
+            {gameInfo?.map((game,i) => (
               <tr key={i}>
                 <td>{game.username}</td>
-                <td>{game.city}</td>
+                <td>{game.city == 0 ? "Bogota":"Medellin"}</td>
                 <td>{game.sex==false ? "Masculino":"Femenino"}</td>
                 <td>{game.playedTimes}</td>
                 <td>{game.saleChances}</td>
@@ -73,6 +75,8 @@ function App() {
                 <td>{game.soldUnits}</td>
                 <td>{game.bankDebt}</td>
                 <td>{game.lastKTNO}</td>
+                <td>{game.sales}</td>
+                <td>{game.stars}</td>
               </tr>
             ))}
             </tbody>
